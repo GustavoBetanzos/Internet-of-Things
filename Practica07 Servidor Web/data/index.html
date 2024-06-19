@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Practica 02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="section-container">
+        <div class="section">
+            <h2>LDR</h2>
+            <p>
+              <!--  <span class="sensor">Voltaje:</span>-->
+                <span id="SENSOR_ID">%SENSOR%</span>
+                <sup class="units">V</sup>
+            </p>
+        </div>
+
+
+        <div class="section">
+            <h2>Potenciometro</h2>
+            <p>
+                <!--<span class="pot">Potenciometro:</span>-->
+                <span id="POT_ID">%POT%</span>
+                <sup class="units"></sup>
+            </p>
+        </div>
+    </div>
+
+    <div class="values-container">
+        <!-- Contenedor para los botones de "ON" y "OFF" -->
+        <div class="values">
+            <h2>Control LEDS</h2>
+            %BUTTONPLACEHOLDER%
+        </div>
+            
+        <div class="values">
+            <h2>PWM Led 5</h2>
+            <p><span id="textSliderValue">%SLIDERVALUE%</span></p>
+            <p><input type="range" onchange="updateSliderPWM(this)" id="pwmSlider" min="0" max="255" value="%SLIDERVALUE%"
+                    step="1" class="slider"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Agrega la referencia al archivo JavaScript externo -->
+</body>
+
+</html>

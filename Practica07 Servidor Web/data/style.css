@@ -1,0 +1,167 @@
+html {
+	font-family: Charlotte;
+	display: inline-block;
+	margin: 0px auto;
+	text-align: center;
+	background-color: #ded9d6;
+	text-shadow: 1px 1px 2px white;
+  }
+  
+  h2 {
+	font-size: 3.175rem; 
+	color: #907761;
+  }
+  
+  p {
+	font-family: Charlotte;
+	color: #ab9680;
+	font-size: 2.55rem; 
+  }
+  
+  .units {
+	font-size: 1.02rem; 
+  }
+  
+  /** Parte del SENSOR LDR */
+  .sensor {
+	font-size: 1.275rem; 
+	vertical-align: middle;
+	padding-bottom: 12.75px; 
+  }
+  
+  body {
+	max-width: 400px;
+	margin: 0px auto;
+	padding-bottom: 21.25px; 
+  }
+  
+  /** Parte del PWM */
+  .slider {
+	-webkit-appearance: none;
+	margin: 11.9px; 
+	width: 306px; 
+	height: 21.25px; 
+	background: #907761;
+	outline: none;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 29.75px; 
+	height: 29.75px; 
+	background: #feffff;
+	cursor: pointer;
+	border: 0.85px solid black; 
+	border-radius: 4.25px; 
+  }
+  
+  .slider::-moz-range-thumb {
+	width: 29.75px; 
+	height: 29.75px; 
+	background: #389bc9;
+	cursor: pointer;
+  }
+  
+  /** Parte de los LEDS */
+  .switch {position: relative; 
+    display: inline-block; 
+    width: 120px; 
+    height: 68px} 
+.switch input {display: none}
+
+.slider1, .slider2, .slider3 { /* Agrega .slider3 para el tercer botón */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 6px;
+}
+
+.slider1:before, .slider2:before, .slider3:before { /* Agrega .slider3:before */
+  position: absolute;
+  content: "";
+  height: 52px;
+  width: 52px;
+  left: 8px;
+  bottom: 8px;
+  background-color: #fff;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 3px;
+}
+
+input:checked+.slider1 {
+  background-color: #A18262;
+}
+
+input:checked+.slider2 {
+  background-color: #C29B61;
+}
+
+input:checked+.slider3 {
+  background-color: #DAC0A8;
+}
+
+input:checked+.slider1:before {
+  -webkit-transform: translateX(52px);
+  -ms-transform: translateX(52px);
+  transform: translateX(52px);
+}
+
+input:checked+.slider2:before {
+  -webkit-transform: translateX(52px);
+  -ms-transform: translateX(52px);
+  transform: translateX(52px);
+}
+
+input:checked+.slider3:before {
+  -webkit-transform: translateX(52px);
+  -ms-transform: translateX(52px);
+  transform: translateX(52px);
+}
+	/* Modificacion para que LDR y PWM esten juntos */
+  .section-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+  }
+  
+  .section {
+	text-align: center;
+	flex: 1;
+	margin: 0 80px; /* Añadir margen horizontal para separar los elementos */
+  }
+
+  	/* Modificacion para que LDR y PWM esten juntos */
+  .section-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+  }
+  
+  .section {
+	text-align: center;
+	flex: 1;
+	margin: 0 120px; /* Añadir margen horizontal para separar los elementos */
+  }
+
+	/* Modificacion para que los leds esten juntos */
+  .values-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    }
+    
+    .values {
+    text-align: center;
+    flex: 1;
+    margin: 0 120px; /* Añadir margen horizontal para separar los elementos */
+    }
