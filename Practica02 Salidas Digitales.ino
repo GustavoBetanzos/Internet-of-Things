@@ -1,5 +1,7 @@
 //Gustavo Noel Betanzos Reyes
 
+//Se encienden y apagan los 5 leds de la placa en forma secuencial en ambas direcciones, es decir, del Led 1 al 5 y viceversa, utilizando ciclos for.
+
 //Defino los leds de uso en un arreglo
 const int leds[5] = {14, 27, 26, 25, 33};
 

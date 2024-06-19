@@ -1,5 +1,7 @@
 //Gustavo Noel Betanzos Reyes
 
+//Se encienden los 5 leds de la placa en función de la luz inducida a la fotorresistencia, es decir, sin nada de luz que ninguno se enciende y conforme la luz llega al sensor se van iluminando los demás leds hasta que los 5 se iluminen por completo.
+
 #define PinADC 34 //Defino pin
 //Defino un arreglo para los leds
 const int leds[5] = {14, 27, 26, 25, 33};

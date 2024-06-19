@@ -1,6 +1,8 @@
 //Gustavo Noel Betanzos Reyes 
 //CodigoSlave
 
+//Con el uso de otra ESP32 una en modo esclavo y otra en modo maestro, se logra que cuando se apriete un botón en el ESP32 en modo maestro se envíe la temperatura y encienda un LED al mismo tiempo en el ESP32 en modo esclavo y cuando se apriete el otro se envíe la humedad y se apague el mismo LED.
+
 //Incluir librería de bluetooth
 #include "BluetoothSerial.h"
 

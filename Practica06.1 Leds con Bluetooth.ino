@@ -1,5 +1,7 @@
 //Gustavo Noel Betanzos Reyes 
 
+//Usando la aplicación Serial Bluetooth Terminal se encienden los LEDs dependiendo el valor enviado, es decir, al enviar un “1” se enciende el LED 1, al enviar “2” se enciende el LED 2 y así sucesivamente, todos se apagan cuando se envíe un “0”
+
 //Incluir librería de bluetooth
 #include "BluetoothSerial.h"
 

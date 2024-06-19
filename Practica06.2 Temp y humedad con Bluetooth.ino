@@ -1,5 +1,7 @@
 //Gustavo Noel Betanzos Reyes
 
+//Usando la aplicación Serial Bluetooth Terminal se logro que cada vez que se apriete un botón, se recibe la temperatura actual en el smartphone y cuando se apriete el otro, la humedad.
+
 //Incluir librería de bluetooth
 #include "BluetoothSerial.h"
 

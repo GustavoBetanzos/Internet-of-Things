@@ -1,5 +1,7 @@
 //Gustavo Noel Betanzos Reyes
 
+//Se implementó un servidor web local con el ESP32, en donde se diseñó una interfaz de usuario para monitorear los valores en tiempo real del potenciómetro y la LDR, y que además permite modificar el brillo del LED 5 con PWM e interactuar con los LEDs 1, 2 y 3.
+
 //Bibliotecas----------------------------------
 #include "WiFi.h"
 #include "ESPAsyncWebServer.h"

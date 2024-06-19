@@ -29,8 +29,8 @@ const int ledOffState = LOW;
 #define LDRPin 39 // Pin de la fotoresistencia
 
 // Configuración del cliente MQTT
-const char* wifiSSID = "Clase_IoT";
-const char* wifiPassword = "0123456789";
+const char* wifiSSID = //Nombre de la RED
+const char* wifiPassword = //Contraseña de la RED
 const char* mqttBroker = "test.mosquitto.org";
 const char* mqttClientName = "ESP32_Beta"; // Cambiar el nombre del cliente MQTT
 const int mqttPort = 1883;

@@ -1,5 +1,7 @@
 //Gustavo Noel Betanzos Reyes
 
+//Cada vez que se oprime un botón, los LEDs se enciendan uno a uno, si se pasa de 5 pulsaciones, vuelve a empezar el ciclo. Al oprimir el otro botón, se apagan todos y se reinicia el ciclo.
+
 //Definimos los pines para los botones
 #define PinBotton_PullUp 4 
 #define PinBotton_PullDown 15

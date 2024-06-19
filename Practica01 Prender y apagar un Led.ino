@@ -1,4 +1,7 @@
 //Gustavo Noel Betanzos Reyes
+
+//Se encienden y apagan los leds con el fin de familiarizarse con la estructura de programación para Arduino.
+
 void setup() {
   // Declaramos el pin 14 como salida
   pinMode(14, OUTPUT);

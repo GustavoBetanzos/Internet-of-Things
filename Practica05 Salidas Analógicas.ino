@@ -1,5 +1,7 @@
 //Gustavo Noel Betanzos Reyes
 
+//Se ilumina de modo sinusoidal dos LEDs utilizando PWM y DAC respectivamente, observando en una gráfica el comportamiento de ambos métodos con ayuda del Serial Plotter.
+
 //Definimos los pines de los LED, del PWM y DAC
 #define PinPWM 26
 #define PinDAC 25
