@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta etiquetas para configuración del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <!-- Título de la página -->
+    <title>HIDRA DOMINATION</title>
+
+    <!-- Estilos para la precarga de imágenes -->
+    <style>
+        #preload-images {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo del juego -->
+    <div class="background" id="background"></div>
+
+    <!-- Sección de reglas del juego -->
+    <div class="reglas">
+        <!-- Título y descripción de las reglas -->
+        <div class="titulo">¡BIENVENIDO JUGADOR!</div>
+        <div class="descripcion">Antes de tu valeroso e intrépido enfrentamiento contra la hidra, debes tener en cuenta un par de reglas básicas:</div>
+
+        <!-- Reglas numeradas -->
+        <div class="regla1">1. Este combate se desarrolla por rondas, así que no te servirá presionar muy rápido.</div>
+        <div class="regla2">2. El botón para esquivar es SW1, y el botón para atacar es SW2.</div>
+        <div class="regla3">3. No permitas que el cambio de la luz en el fondo te distraiga; esto solo es un reflejo de tu realidad.</div>
+        <div class="regla4">4. Si logras esquivar el ataque de la hidra, tu daño aumentará en 1 el siguiente turno.</div>
+        <div class="regla5">5. Si la hidra esquiva tu ataque, tu daño volverá automáticamente a 1.</div>
+        <div class="regla6">6. Si ambos esquivan, sus estadísticas se mantendrán iguales.</div>
+        <div class="regla7">7. El primero en perder los 5 puntos de vida que posee, perderá el combate.</div>
+        <div class="regla7">8. Tus puntos de vida se ven reflejados en los leds de tu ESP32.</div>
+        <div class="regla8">9. Si esquivas 3 turnos seguidos tu daño estará automáticamente a 1.</div>
+    </div>
+
+    <!-- Mensajes de resultado del juego -->
+    <div class="letreroPerder">¡HAS PERDIDO, LA HIDRA HA DOMINADO TODO!</div>
+    <div class="letreroGanar">¡FELICIDADES, HAS LOGRADO VENCER!</div>
+    <div class="letreroEmpate">EL COMBATE HA TERMINADO EN EMPATE</div>
+
+    <!-- Elementos informativos del juego -->
+    <p id="danio"># DAÑO</p>
+    <p id="vidaEne"># VIDA</p>
+    <p id="rondas">RONDA:#</p>
+    
+    <!-- Botón para iniciar el combate -->
+    <button id="jugarJuego" class="button">Iniciar Combate</button>
+    
+    <!-- Botones visuales para esquivar y atacar -->
+    <div class="esquivar"></div>
+    <div class="atacar"></div>
+
+    <!-- Representación del personaje del jugador -->
+    <div class="character">
+        <!-- Partes del cuerpo del personaje -->
+        <div class="head">
+            <div class="hair"></div>
+            <div class="face">
+                <div class="eye"></div>
+                <div class="mouth"></div>
+            </div>
+        </div>
+        <div class="torso"></div>
+        <div class="legs"></div>
+        <div class="foots"></div>
+        <div class="handRight"></div>
+        <div class="handLeft"></div>
+       
+        <!-- Escudo del personaje -->
+        <div class="shield">
+            <div class="edge"></div>
+            <div class="oak"></div>
+            <div class="center"></div>
+        </div>
+    </div>
+
+    <!-- Representación de la espada del jugador -->
+    <div class="sword">
+        <div class="blade"></div>
+        <div class="handle"></div>
+    </div>
+
+    <!-- Ataque del enemigo -->
+    <div class="enemyAttack">
+        <div class="meteorBg"><div class="meteorFront"></div></div>
+        <div class="meteorBgM"><div class="meteorFrontM"></div></div>
+        <div class="meteorBgL"><div class="meteorFrontL"></div></div>
+    </div>
+
+    <!-- Representación de la hidra (enemigo) -->
+    <div class="enemy">
+        <!-- Cabeza y cuernos de la hidra -->
+        <div class="firstCuerno"></div>
+        <div class="firstHead">
+            <div class="faceH">
+                <div class="eyeL"></div>
+                <div class="eyeR"></div>
+                <div class="eyeLD"></div>
+                <div class="eyeRD"></div>
+                <div class="mouthH"></div>
+                <div class="tongue"></div>
+            </div>
+        </div>
+        <div class="firstCuello"></div>
+
+        <div class="secondCuerno"></div>
+        <div class="secondHead">
+            <div class="sfaceH">
+                <div class="seyeL"></div>
+                <div class="seyeR"></div>
+                <div class="seyeLD"></div>
+                <div class="seyeRD"></div>
+                <div class="smouthH"></div>
+            </div>
+        </div>
+        <div class="secondCuello"></div>
+
+        <div class="thirdCuerno"></div>
+        <div class="thirdHead">
+            <div class="tfaceH">
+                <div class="teyeL"></div>
+                <div class="teyeR"></div>
+                <div class="teyeLD"></div>
+                <div class="teyeRD"></div>
+                <div class="tmouthH"></div>
+                <div class="colmillo1"></div>
+                <div class="colmillo2"></div>
+            </div>
+        </div>
+        <div class="thirdCuello"></div>
+
+        <!-- Torso y extremidades de la hidra -->
+        <div class="torsoH">
+            <div class="stomach"></div>
+        </div>
+        <div class="piernaL"></div>
+        <div class="piernaR"></div>
+        <div class="pieL"></div>
+        <div class="pieR"></div>
+        <div class="cola"></div>
+        <div class="colaS"></div>
+        <div class="detallecola"></div>
+    </div>
+
+    <!-- Inclusión del script de JavaScript -->
+    <script src="script.js"></script>
+
+    <!-- Precarga de imágenes -->
+    <div id="preload-images">
+        <!-- Imágenes pre-cargadas -->
+        <img src="/Dia.png" alt="Dia">
+        <img src="/Tarde.png" alt="Tarde">
+        <img src="/Noche.png" alt="Noche">
+    </div>
+</body>
+</html>

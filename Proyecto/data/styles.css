@@ -1,0 +1,975 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: #fdfdfd;
+} 
+
+/* -------------------Fondo predeterminado-------------------*/
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.5s;
+}
+
+/* -------------------Boton para iniciar el combate-------------------*/
+.button {
+    display: inline-block;
+    background-color: #ba0000;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 16px 40px;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 510px; 
+    left: 520px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    z-index: 3;
+  }
+
+/* -------------------Mostrar las reglas del juego-------------------*/
+.reglas .titulo {
+    font-size: 60px; 
+    text-align: center; 
+    margin: 25px; 
+    margin-bottom: 23px;
+}
+
+.reglas .descripcion {
+    font-size: 28px; 
+    margin-bottom: 20px;
+}
+
+.reglas {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #d64646, #681e1e);
+    top: 0;
+    left: 0;
+    z-index: 3;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.reglas > div {
+    font-size: 30px; 
+    margin-left: 55px;
+    margin-right: 25px;
+}
+
+/* -------------------Definir la imagen del jugador-------------------*/
+.character {
+    width: 96px; 
+    height: 270px; 
+    background-color: rgb(231, 169, 77);
+    margin-top: 261px;
+    left: 280px;
+    position: absolute;}
+
+.head {
+    width: 96px; 
+    height: 96px; 
+    background-color: #f7d65c;
+    position: relative;
+}
+
+.hair {
+    width: 96px; 
+    height: 24px; 
+    background-color: #000;
+    position: absolute;
+    top: 0;
+}
+
+.face {
+    width: 96px; 
+    height: 72px; 
+    background-color: #f7d65c;
+    position: absolute;
+    top: 24px;
+}
+
+.eye {
+    width: 10px; 
+    height: 10px; 
+    background-color: #fff;
+    position: absolute;
+    top: 15px;
+    left: 70px; 
+}
+
+.mouth {
+    width: 20px; 
+    height: 8px; 
+    background-color: #755211;
+    position: absolute;
+    top: 48px; 
+    left: 74px; 
+}
+
+.torso {
+    width: 96px; 
+    height: 70px; 
+    background-color: #ac1111;
+}
+
+.legs{
+    width: 96px; 
+    height: 96px; 
+    background-color: #a58080;
+    position: absolute;
+}
+
+.foots {
+    width: 96px; 
+    height: 20px; 
+    background-color: #833434;
+    position: absolute;
+    top: 252px; 
+    left: 0px; 
+}
+
+.handRight{
+    width: 35px; 
+    height: 25px;
+    background-color: #f7d65c;
+    position: absolute;
+    top: 120px; 
+    left: 96px; 
+} 
+
+.handLeft{
+    width: 30px; 
+    height: 42px; 
+    background-color: #f7d65c;
+    position: absolute;
+    top: 140px; 
+    left: 0px; 
+}
+
+.shield {
+    position: absolute;
+    top: 160px;
+    left: 10px;
+    transform: translateX(-50%);
+}
+
+.edge {
+    width: 100px;
+    height: 100px;
+    background-color: #c0c0c0;
+    position: relative; 
+}
+
+.oak {
+    width: 70px;
+    height: 70px;
+    background-color: rgb(167, 124, 33);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.center {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    position: absolute;
+    top: 40px; 
+    left: 40px;
+}
+/* -------------------Definir la imagen de la espada-------------------*/
+.sword {
+    top: 373px;
+    left: 411px;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.blade {
+    width: 100px;
+    height: 20px;
+    background-color: #c0c0c0;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    transition: all 0.5s; 
+}
+
+.handle {
+    width: 50px;
+    height: 20px;
+    background-color: #000;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transition: all 0.5s; 
+}
+
+/* -------------------Definir la imagen del enemigo-------------------*/
+.enemy{
+    width: 250px;
+    height: 250px;
+    background-color: #580909;
+    margin-top: 200px;
+    left: 850px;
+    position: absolute;
+}
+
+.torsoH{
+    width: 250px; 
+    height: 250px; 
+    background-color: #580909;
+    position: absolute;
+    z-index: 1;}
+
+.stomach{
+    width: 190px; 
+    height: 190px; 
+    background-color: #993a3a;
+    position: absolute;
+    z-index: 1;
+    top: 28px;
+    left: 28px;}
+
+.firstCuerno{
+    width: 12px;
+    height: 35px;
+    background-color: #eeeeee;
+    position: absolute;
+    top: -185px; 
+    left: 33px; 
+    z-index: 1;   }
+
+.firstCuello{
+    width: 40px;
+    height: 70px;
+    background-color: #580909;
+    position: absolute;
+    top: -70px; 
+    left: 22px; 
+    z-index: 1;}
+
+.faceH {
+    width: 80px; 
+    height: 80px; 
+    background-color: #580909;
+    position: absolute;
+    top: -150px;
+    left: 0px; }
+
+.eyeL {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 15px;
+    left: 15px; }
+
+.eyeR {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 15px;
+    left: 55px; }
+
+.eyeLD {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 25px;
+    left: 25px; }
+
+.eyeRD {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 25px;
+    left: 46px; }
+
+.mouthH {
+    width: 50px; 
+    height: 8px; 
+    background-color: #ffffff;
+    position: absolute;
+    top: 50px; 
+    left: 17px; }
+
+.tongue {
+    width: 15px; 
+    height: 50px; 
+    background-color: rgb(223, 121, 164);
+    position: absolute;
+    top: 58px; 
+    left: 33px; }    
+
+.secondCuerno{
+    width: 12px;
+    height: 35px;
+    background-color: #eeeeee;
+    position: absolute;
+    top: -185px; 
+    left: 121px; 
+    z-index: 1;   }
+
+.secondCuello{
+    width: 40px;
+    height: 70px;
+    background-color: #580909;
+    position: absolute;
+    top: -70px; 
+    left: 105px; 
+    z-index: 1;}
+
+.sfaceH {
+    width: 80px; 
+    height: 80px; 
+    background-color: #580909;
+    position: absolute;
+    top: -150px;
+    left: 86px; }
+
+.seyeL {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 15px;
+    left: 15px; }
+
+.seyeR {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 15px;
+    left: 55px; }
+
+.seyeLD {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 25px;
+    left: 25px; }
+
+.seyeRD {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 25px;
+    left: 46px; }
+
+.smouthH {
+    width: 50px; 
+    height: 8px; 
+    background-color: #ffffff;
+    position: absolute;
+    top: 60px; 
+    left: 17px; }
+
+.thirdCuerno{
+    width: 12px;
+    height: 35px;
+    background-color: #eeeeee;
+    position: absolute;
+    top: -185px; 
+    left: 204px; 
+    z-index: 1;   }
+
+.thirdCuello{
+    width: 40px;
+    height: 70px;
+    background-color: #580909;
+    position: absolute;
+    top: -70px; 
+    left: 190px; 
+    z-index: 1;}
+
+.tfaceH {
+    width: 80px; 
+    height: 80px; 
+    background-color: #580909;
+    position: absolute;
+    top: -150px;
+    left: 172px; }
+
+.teyeL {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 15px;
+    left: 15px; }
+
+.teyeR {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 15px;
+    left: 55px; }
+
+.teyeLD {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 25px;
+    left: 25px; }
+
+.teyeRD {
+    width: 10px; 
+    height: 10px; 
+    background-color: #050505;
+    position: absolute;
+    top: 25px;
+    left: 46px; }
+
+.tmouthH {
+    width: 50px; 
+    height: 8px; 
+    background-color: #ffffff;
+    position: absolute;
+    top: 60px; 
+    left: 17px; }
+
+.colmillo1 {
+    width: 8px; 
+    height: 11px; 
+    background-color: #ffffff;
+    position: absolute;
+    top: 50px; 
+    left: 24px; }
+
+.colmillo2 {
+    width: 8px; 
+    height: 11px; 
+    background-color: #ffffff;
+    position: absolute;
+    top: 50px; 
+    left: 49px; }
+
+.piernaL {
+    width: 45px;
+    height: 70px;
+    background-color: #580909;
+    position: absolute;
+    top: 250px; 
+    left: 35px; 
+    z-index: 1;}
+
+.piernaR {
+    width: 45px;
+    height: 70px;
+    background-color: #580909;
+    position: absolute;
+    top: 250px; 
+    left: 168px; 
+    z-index: 1;}
+
+.pieL {
+    width: 75px;
+    height: 30px;
+    background-color: #580909;
+    position: absolute;
+    top: 303px; 
+    left: 20px; 
+    z-index: 1;}
+
+.pieR {
+    width: 75px;
+    height: 30px;
+    background-color: #580909;
+    position: absolute;
+    top: 303px; 
+    left: 153px; 
+    z-index: 1;}
+
+.cola{
+    width: 125px;
+    height: 30px;
+    background-color: #580909;
+    position: absolute;
+    top: 180px; 
+    left: 250px; 
+    z-index: 1;}
+
+.colaS{
+    width: 30px;
+    height: 80px;
+    background-color: #580909;
+    position: absolute;
+    top: 120px; 
+    left: 345px; 
+    z-index: 1;}
+
+.detallecola{
+    width: 50px;
+    height: 50px;
+    background-color: #0c0505;
+    position: absolute;
+    top: 90px; 
+    left: 335px; 
+    z-index: 1;}
+
+/* -------------------Definir la imagen del ataque enemigo-------------------*/
+.enemyAttack{    
+    width: 200px; 
+    height: 200px; 
+    background-color: rgb(211, 89, 32);
+    position: absolute;
+    margin-top: 100px;
+    left: 110px;
+    transform: translateX(220%);
+    z-index: -1;
+}
+
+.meteorBG{
+    width: 50px;
+    height: 50px;
+    background-color: #d36d20;
+    position: relative;}
+
+.meteorFront{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(63, 41, 8); ;
+    position: absolute;
+    top: 25px; 
+    left: 25px; }
+
+.meteorBgM{
+    width: 60px;
+    height: 60px;
+    background-color: #d36d20;
+    position: relative;
+    top: -85px; 
+    left: 100px;}
+
+.meteorFrontM{
+    width: 45px;
+    height: 45px;
+    background-color: rgb(63, 41, 8); ;
+    position: absolute;
+    top: 7.5px; 
+    left: 7.5px; }
+
+.meteorBgL{
+    width: 60px;
+    height: 60px;
+    background-color: #d36d20;
+    position: relative;
+    top: -25px; 
+    left: 230px;}
+
+.meteorFrontL{
+    width: 45px;
+    height: 45px;
+    background-color: rgb(63, 41, 8); ;
+    position: absolute;
+    top: 7.5px; 
+    left: 7.5px; }
+
+/* -------------------Animacion del jugador atacando-------------------*/
+.animateCharacter {
+    animation: characterAttack 1s steps(3) ;
+  }
+
+@keyframes characterAttack {
+    0%, 100% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(0);
+        left: 280px; 
+        
+    }
+    33.33% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(48px); 
+        left: 375px; 
+    }
+    66.66% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(96px); 
+        left: 470px; 
+    }
+
+}
+.animateSword {
+    animation: SwordAttack 1s steps(3) ;
+  }
+
+@keyframes SwordAttack {
+    0%, 100% {
+        background-color: rgb(104, 94, 81);
+        transform: translateX(0);
+        left: 411px; /* 95 CAMBIO */
+    }
+    33.33% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(48px); 
+        left: 506px; /*95 CAMBIO*/
+    }
+    66.66% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(96px); 
+        left: 601px; /* 95 CAMBIO */
+    }
+
+}
+
+
+/* -------------------Animacion del jugador esquivando-------------------*/
+.animateCharacterDodge {
+    animation: characterDodge 1s steps(3) ;
+  }
+@keyframes characterDodge {
+    0%, 100% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(0);
+        left: 280px; /* 84 CAMBIO */
+        margin-top:261px;
+    }
+    33.33% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(48px); 
+        left: 180px; 
+        margin-top:200px;
+    }
+    66.66% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(96px); 
+        left: 80px; 
+        margin-top:261px;
+    }
+
+}
+.animateSwordDodge {
+    animation: SwordDodge 1s steps(3) ;
+  }
+@keyframes SwordDodge {
+    0%, 100% {
+        background-color: rgb(104, 94, 81);
+        transform: translateX(0);
+        left: 411px; /**100*/
+        top:373px;
+    }
+    33.33% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(48px); 
+        left: 311px; /**100*/
+        top:312px;/**61*/
+    }
+    66.66% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(96px); 
+        left: 211px; /**100*/
+        top:373px;
+    }
+
+}
+
+/* -------------------Animacion del enemigo esquivando-------------------*/
+.animateEnemyDodge {
+    animation: enemyDodge 1s steps(3) ;
+  }
+@keyframes enemyDodge {
+    0%, 100% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(0);
+        margin-top: 200px;
+        
+    }
+    33.33% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(48px); 
+        margin-top: 0px;
+        
+    }
+    66.66% {
+        background-color: rgb(231, 169, 77);
+        transform: translateX(96px); 
+        margin-top: 200px;
+    }
+
+}
+
+/* -------------------Animacion de ataque enemigo-------------------*/
+.animateEnemyAttack {
+    animation: enemyAttack 1s steps(3) ;
+  }
+@keyframes enemyAttack {
+    0%, 100% {
+        background-color: rgb(211, 89, 32);
+        margin-top: 100px;
+        left: 110px;
+        transform: translateX(220%); 
+        z-index: 1;   
+    }
+    33.33% {
+        background-color: rgb(211, 89, 32);
+        transform: translateX(220%);    
+        margin-top: 220px;
+        left: 60px;
+        z-index: 1;   
+    }
+    66.66% {
+        background-color: rgb(211, 89, 32);
+        transform: translateX(220%);    
+        margin-top: 340px;
+        left: 10px;
+        z-index: 1;   
+    }
+
+}
+
+/* -------------------Animaciones para desaparecer la primera pantalla-------------------*/
+.animateReglasDisappear {
+    animation: reglasD 3s ease-out forwards;
+}
+@keyframes reglasD {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        background: linear-gradient(to bottom, #d64646, #681e1e);
+    }
+}
+.botonDesaparecido {
+    display: none;
+}
+
+/* -------------------Letreros para saber quien gano y perdio junto con sus animaciones-------------------*/
+.letreroPerder, .letreroGanar, .letreroEmpate {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 220px;
+    width: 45%; 
+    z-index: 3;
+    display: none;
+}
+
+.letreroPerder {
+    background-color: #ff6666;
+    color: #fff;
+}
+
+.letreroGanar {
+    background-color: #66cc66;
+    color: #fff;
+}
+
+.letreroEmpate {
+    background-color: #6666cc;
+    color: #fff;
+}
+
+.mostrar-letrero {
+    display: block;
+    opacity: 1;
+}
+
+/* -------------------Animaciones para cuando el Jugador gana-------------------*/
+.animateLeftS {
+    animation: moveLeftS 1s ease-in-out forwards;
+}
+.animateLeftC {
+    animation: moveLeftC 1s ease-in-out forwards;
+}
+.animateDisappear {
+    animation: disappear 1s ease-in-out forwards;
+}
+@keyframes moveLeftS {
+    to {
+        left: 677px;
+    }
+}
+@keyframes moveLeftC {
+    to {
+        left: 40%;
+    }
+}
+@keyframes moveLeftE {
+    to {
+        left: 525px;
+    }
+}
+@keyframes disappear {
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* -------------------Animaciones para cuando el Jugador pierde-------------------*/
+.animateDS {
+    animation: disappear 1s ease-in-out forwards;
+}
+.animateDC {
+    animation: disappear 1s ease-in-out forwards;
+}
+.animateLeftE {
+    animation: moveLeftE 1s ease-in-out forwards;
+}
+
+/* -------------------Animaciones para cuando el Jugador tiene un empate con el enemigo-------------------*/
+.aEmpateS {
+    animation: empateS 1s ease-in-out forwards;
+}
+.aEmpateC {
+    animation: empateC 1s ease-in-out forwards;
+}
+.aEmpateE {
+    animation: empateE 1s ease-in-out forwards;
+}
+@keyframes empateS {
+    to {
+        left: 501px; /*411*/
+    }
+}
+@keyframes empateC {
+    to {
+        left: 380px; /*290*/
+    }
+}
+@keyframes empateE {
+    to {
+        left: 760px; /*850*/
+    }
+}
+
+/* -------------------Boton visual de ataque y esquivar-------------------*/
+.esquivar{
+    position: absolute;
+    width: 160px; 
+    height: 110px;
+    background-color: #666;
+    border-radius: 260px / 100px;
+    z-index: 2;
+    top: 80%;
+    left: 47%;
+}
+.atacar {
+    position: absolute;
+    width: 160px; 
+    height: 110px;
+    background-color: #666;
+    border-radius: 260px / 100px; 
+    z-index: 2;
+    top: 80%;
+    left: 33%;
+}
+.esquivar:before {
+    content: "SW1 ESQUIVAR";
+    background-color: #ccc;
+}
+.atacar:before {
+    content: "SW2 ATACAR";
+    background-color: #ccc;
+    
+}
+.esquivar:before,
+.atacar:before {
+    line-height: 40px;
+    text-align: center; 
+    text-shadow: 2px 2px 2px #ffffff;
+    font-weight: bold; 
+    width: 160px; 
+    height: 40px; 
+    border-radius: 260px / 60px; 
+    top: 0px;
+    position: absolute;
+}
+.botonPresionado1 {
+    animation: botonP 1s ease-in-out forwards;
+}
+.botonPresionado2 {
+    animation: botonP 1s ease-in-out forwards;
+}
+@keyframes botonP {
+    to {
+        height: 90px;
+        top: 83%;
+    }
+
+    50% {
+        background-color: #ffff00; 
+    }
+}
+
+/* -------------------Mostrar los valores del danio, la vida del enemigo, y las rondas-------------------*/
+#danio{
+    position: absolute;
+    z-index: 2;
+    font-size: 30px;
+    top: 515px; 
+    left: 275px;
+    color:rgb(255, 255, 255);  
+    visibility: hidden;
+}
+
+#vidaEne {
+    position: absolute;
+    z-index: 2;
+    font-size: 30px;
+    top: 515px; 
+    left: 930px;
+    color:rgb(255, 255, 255);   
+    visibility: hidden;
+}
+
+#rondas {
+    position: absolute;
+    z-index: 2;
+    font-size: 50px;
+    top: -30px; 
+    visibility:visible;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8); /* Ajusta los valores según tus preferencias */
+    /*transition: opacity 0.5s ease-in-out; /* Configura la transición de opacidad */
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#danio, #vidaEne{
+    position: absolute;
+    z-index: 2;
+    visibility: hidden;
+    animation: fadeIn 3s ease-in-out; 
+}
+
+#rondas.oculto {
+    opacity: 0;
+    visibility: hidden;
+}
